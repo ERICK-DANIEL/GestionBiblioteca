@@ -41,153 +41,197 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Ingrese la matricula: ");
-                    matricula = input.nextLine();
-                    System.out.println("Ingrese los nombres: ");
-                    nombres = input.nextLine();
-                    System.out.println("Ingrese los apellidos: ");
-                    apellidos = input.nextLine();
-                    System.out.println("Ingrese el correo: ");
-                    correo = input.nextLine();
-                    System.out.println("Ingrese la carrera: ");
-                    carrera = input.nextLine();
-                    System.out.println("Ingrese el semestre: ");
-                    semestre = input.nextLine();
-                    usuarios.add(new Estudiante(matricula, nombres, apellidos, correo, carrera, semestre));
+                    try {
+                        System.out.println("Ingrese la matricula: ");
+                        matricula = input.nextLine();
+                        System.out.println("Ingrese los nombres: ");
+                        nombres = input.nextLine();
+                        System.out.println("Ingrese los apellidos: ");
+                        apellidos = input.nextLine();
+                        System.out.println("Ingrese el correo: ");
+                        correo = input.nextLine();
+                        System.out.println("Ingrese la carrera: ");
+                        carrera = input.nextLine();
+                        System.out.println("Ingrese el semestre: ");
+                        semestre = input.nextLine();
+                        usuarios.add(new Estudiante(matricula, nombres, apellidos, correo, carrera, semestre));
+                    } catch (Exception e) {
+                        System.out.println("No se pudo registrar el estudiante");
+                    }
                     break;
                 case 2:
-                    System.out.println("Ingrese la matricula: ");
-                    matricula = input.nextLine();
-                    System.out.println("Ingrese los nombres: ");
-                    nombres = input.nextLine();
-                    System.out.println("Ingrese los apellidos: ");
-                    apellidos = input.nextLine();
-                    System.out.println("Ingrese el correo: ");
-                    correo = input.nextLine();
-                    usuarios.add(new Profesor(matricula, nombres, apellidos, correo));
+                    try {
+                        System.out.println("Ingrese la matricula: ");
+                        matricula = input.nextLine();
+                        System.out.println("Ingrese los nombres: ");
+                        nombres = input.nextLine();
+                        System.out.println("Ingrese los apellidos: ");
+                        apellidos = input.nextLine();
+                        System.out.println("Ingrese el correo: ");
+                        correo = input.nextLine();
+                        usuarios.add(new Profesor(matricula, nombres, apellidos, correo));
+                    } catch (Exception e) {
+                        System.out.println("No se pudo registrar el profesor");
+                    }
                     break;
                 case 3:
-                   System.out.println("Ingrese la matricula del estudiante a actualizar: ");
-                    matricula = input.nextLine();
-                    for (int i = 0; i < Usuario.nUsuarios; i++) {
-                        if (matricula.equals(usuarios.get(i).getMatricula())) {
-                            System.out.println("Ingrese los nuevos nombres: ");
-                            nombres = input.nextLine();
-                            usuarios.get(i).setNombres(nombres);
-                            System.out.println("Ingrese los nuevos apellidos: ");
-                            apellidos = input.nextLine();
-                            usuarios.get(i).setApellidos(apellidos);
-                            System.out.println("Ingrese el nuevo correo: ");
-                            correo = input.nextLine();
-                            usuarios.get(i).setCorreo(correo);
+                    try {
+                        System.out.println("Ingrese la matricula del estudiante a actualizar: ");
+                        matricula = input.nextLine();
+                        for (int i = 0; i < Usuario.nUsuarios; i++) {
+                            if (matricula.equals(usuarios.get(i).getMatricula())) {
+                                System.out.println("Ingrese los nuevos nombres: ");
+                                nombres = input.nextLine();
+                                usuarios.get(i).setNombres(nombres);
+                                System.out.println("Ingrese los nuevos apellidos: ");
+                                apellidos = input.nextLine();
+                                usuarios.get(i).setApellidos(apellidos);
+                                System.out.println("Ingrese el nuevo correo: ");
+                                correo = input.nextLine();
+                                usuarios.get(i).setCorreo(correo);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo actualizar el estudiante");
                     }
                     break;
                 case 4:
-                    System.out.println("Ingrese la matricula del profesor a actualizar ");
-                    matricula = input.nextLine();
-                    for (int i = 0; i < Usuario.nUsuarios; i++) {
-                        if (matricula.equals(usuarios.get(i).getMatricula())) {
-                            System.out.println("Ingrese los nuevos nombres: ");
-                            nombres = input.nextLine();
-                            usuarios.get(i).setNombres(nombres);
-                            System.out.println("Ingrese los nuevos apellidos: ");
-                            apellidos = input.nextLine();
-                            usuarios.get(i).setApellidos(apellidos);
-                            System.out.println("Ingrese el nuevo correo: ");
-                            correo = input.nextLine();
-                            usuarios.get(i).setCorreo(correo);
+                    try {
+                        System.out.println("Ingrese la matricula del profesor a actualizar ");
+                        matricula = input.nextLine();
+                        for (int i = 0; i < Usuario.nUsuarios; i++) {
+                            if (matricula.equals(usuarios.get(i).getMatricula())) {
+                                System.out.println("Ingrese los nuevos nombres: ");
+                                nombres = input.nextLine();
+                                usuarios.get(i).setNombres(nombres);
+                                System.out.println("Ingrese los nuevos apellidos: ");
+                                apellidos = input.nextLine();
+                                usuarios.get(i).setApellidos(apellidos);
+                                System.out.println("Ingrese el nuevo correo: ");
+                                correo = input.nextLine();
+                                usuarios.get(i).setCorreo(correo);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo actualizar el profesor");
                     }
                     break;
                 case 5:
-                    System.out.println("Ingrese la matricula del estudiante a eliminar: ");
-                    matricula = input.nextLine();
-                    for (int i = 0; i < Usuario.nUsuarios; i++) {
-                        if (matricula.equals(usuarios.get(i).getMatricula())) {
-                            usuarios.remove(i);
+                    try {
+                        System.out.println("Ingrese la matricula del estudiante a eliminar: ");
+                        matricula = input.nextLine();
+                        for (int i = 0; i < Usuario.nUsuarios; i++) {
+                            if (matricula.equals(usuarios.get(i).getMatricula())) {
+                                usuarios.remove(i);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo eliminar el estudiante");
                     }
                     break;
                 case 6:
-                    System.out.println("Ingrese la matricula del profesor a eliminar: ");
-                    matricula = input.nextLine();
-                    for (int i = 0; i < Usuario.nUsuarios; i++) {
-                        if (matricula.equals(usuarios.get(i).getMatricula())) {
-                            usuarios.remove(i);
+                    try {
+                        System.out.println("Ingrese la matricula del profesor a eliminar: ");
+                        matricula = input.nextLine();
+                        for (int i = 0; i < Usuario.nUsuarios; i++) {
+                            if (matricula.equals(usuarios.get(i).getMatricula())) {
+                                usuarios.remove(i);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo eliminar el profesor");
                     }
                     break;
                 case 7:
-                    System.out.println("Ingrese el ISBN: ");
-                    isbn = input.nextLine();
-                    System.out.println("Ingrese el título: ");
-                    titulo = input.nextLine();
-                    System.out.println("Ingrese el autor: ");
-                    autor = input.nextLine();
-                    libros.add(new Libro(isbn, titulo, autor));
+                    try {
+                        System.out.println("Ingrese el ISBN: ");
+                        isbn = input.nextLine();
+                        System.out.println("Ingrese el título: ");
+                        titulo = input.nextLine();
+                        System.out.println("Ingrese el autor: ");
+                        autor = input.nextLine();
+                        libros.add(new Libro(isbn, titulo, autor));
+                    } catch (Exception e) {
+                        System.out.println("No se pudo registrar el libro");
+                    }
                     break;
                 case 8:
-                    System.out.println("Ingrese el ISBN del libro a actualizar: ");
-                    isbn = input.nextLine();
-                    for (int i = 0; i < Libro.getnLibros(); i++) {
-                        if (isbn.equals(libros.get(i).getIsbn())) {
-                            System.out.println("Ingrese el nuevo título: ");
-                            titulo = input.nextLine();
-                            libros.get(i).setTitulo(titulo);
-                            System.out.println("Ingrese el nuevo autor: ");
-                            autor = input.nextLine();
-                            libros.get(i).setAutor(autor);
+                    try {
+                        System.out.println("Ingrese el ISBN del libro a actualizar: ");
+                        isbn = input.nextLine();
+                        for (int i = 0; i < Libro.getnLibros(); i++) {
+                            if (isbn.equals(libros.get(i).getIsbn())) {
+                                System.out.println("Ingrese el nuevo título: ");
+                                titulo = input.nextLine();
+                                libros.get(i).setTitulo(titulo);
+                                System.out.println("Ingrese el nuevo autor: ");
+                                autor = input.nextLine();
+                                libros.get(i).setAutor(autor);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo actualizar el libro");
                     }
                     break;
                 case 9:
-                    System.out.println("Ingrese el ISBN del libro a eliminar: ");
-                    isbn = input.nextLine();
-                    for (int i = 0; i < Libro.getnLibros(); i++) {
-                        if (isbn.equals(libros.get(i).getIsbn())) {
-                            libros.remove(i);
+                    try {
+                        System.out.println("Ingrese el ISBN del libro a eliminar: ");
+                        isbn = input.nextLine();
+                        for (int i = 0; i < Libro.getnLibros(); i++) {
+                            if (isbn.equals(libros.get(i).getIsbn())) {
+                                libros.remove(i);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo eliminar el libro");
                     }
                     break;
                 case 10:
-                    System.out.println("Ingrese la matricula del usuario: ");
-                    matricula = input.nextLine();
-                    System.out.println("Ingrese el ISBN del libro: ");
-                    isbn = input.nextLine();
-                    System.out.println("Ingrese la fecha del prestamo: ");
-                    fechaPrestamo = input.nextLine();
-                    System.out.println("Ingrese la fecha de la devolución: ");
-                    fechaDevolucion = input.nextLine();
-                    for (int i = 0; i < Usuario.nUsuarios; i++) {
-                        if (matricula.equals(usuarios.get(i).getMatricula())) {
-                            for (int j = 0; j < Libro.getnLibros(); j++) {
-                                if (isbn.equals(libros.get(j).getIsbn())) {
-                                    prestamos.add(new Prestamo(fechaPrestamo, fechaDevolucion, usuarios.get(i), libros.get(j)));
-                                    libros.get(j).setEstado(true);
+                    try {
+                        System.out.println("Ingrese la matricula del usuario: ");
+                        matricula = input.nextLine();
+                        System.out.println("Ingrese el ISBN del libro: ");
+                        isbn = input.nextLine();
+                        System.out.println("Ingrese la fecha del prestamo: ");
+                        fechaPrestamo = input.nextLine();
+                        System.out.println("Ingrese la fecha de la devolución: ");
+                        fechaDevolucion = input.nextLine();
+                            for (int i = 0; i < Usuario.nUsuarios; i++) {
+                            if (matricula.equals(usuarios.get(i).getMatricula())) {
+                                for (int j = 0; j < Libro.getnLibros(); j++) {
+                                    if (isbn.equals(libros.get(j).getIsbn())) {
+                                        prestamos.add(new Prestamo(fechaPrestamo, fechaDevolucion, usuarios.get(i), libros.get(j)));
+                                        libros.get(j).setEstado(true);
+                                    }
                                 }
                             }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo realizar el prestamo");
                     }
                     break;
                 case 11:
-                    System.out.println("Ingrese la matricula del usuario: ");
-                    matricula = input.nextLine();
-                    System.out.println("Ingrese el ISBN del libro: ");
-                    isbn = input.nextLine();
-                    for (int i = 0; i < Usuario.nUsuarios; i++) {
-                        if (matricula.equals(usuarios.get(i).getMatricula())) {
-                            for (int j = 0; j < Libro.getnLibros(); j++) {
-                                if (isbn.equals(libros.get(j).getIsbn())) {
-                                    for (int k = 0; k < Prestamo.nPrestamos; k++) {
-                                        if (usuarios.get(i).getMatricula().equals(prestamos.get(k).getUsuario().getMatricula()) && libros.get(j).getIsbn().equals(prestamos.get(k).getLibro().getIsbn())) {
-                                            prestamos.remove(k);
-                                            libros.get(j).setEstado(false);
+                    try {
+                        System.out.println("Ingrese la matricula del usuario: ");
+                        matricula = input.nextLine();
+                        System.out.println("Ingrese el ISBN del libro: ");
+                        isbn = input.nextLine();
+                        for (int i = 0; i < Usuario.nUsuarios; i++) {
+                            if (matricula.equals(usuarios.get(i).getMatricula())) {
+                                for (int j = 0; j < Libro.getnLibros(); j++) {
+                                    if (isbn.equals(libros.get(j).getIsbn())) {
+                                        for (int k = 0; k < Prestamo.nPrestamos; k++) {
+                                            if (usuarios.get(i).getMatricula().equals(prestamos.get(k).getUsuario().getMatricula()) && libros.get(j).getIsbn().equals(prestamos.get(k).getLibro().getIsbn())) {
+                                                prestamos.remove(k);
+                                                libros.get(j).setEstado(false);
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo realizar la devolución");
                     }
                     break;
                 case 12:
